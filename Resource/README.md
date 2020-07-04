@@ -53,7 +53,7 @@ sandBoxManager.startmonitoring()
 
 Beacon defines added devices, creating a sanBoxManager instance requires valid beacon reference.
 
-## Sanitization Status & Protocols
+## Sanitization Status
 
 ```swift
 NotSanitized (the device is not sanitized)
