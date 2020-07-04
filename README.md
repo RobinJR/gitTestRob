@@ -1,16 +1,12 @@
- SanBox (iOS Framework)
-
-![Alt text](relative/path/to/img.jpg?raw=true "Title")
+ # SanBox (iOS Framework)
 
 
-
-
-Introduction
+## Introduction
 
 SanBox framework is be used for finding nearby iBeacon hardware and performing sanitizing processes. Detailed workflow is described below.
 
 
-Workflow Design
+##Workflow Design
 
 
 
