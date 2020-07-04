@@ -19,13 +19,13 @@ Development framework contains architecture files for running both devices and s
 Drag and drop the SanBox.framework file into your Xcode project. Make sure that "Copy Items to Destination's Group Folder" is checked. 
 
 
-![Import Framework](/Resource/importFramework)
+![Import Framework](/Resource/importFramework.jpg)
 
 
 Navigate to the project settings -> target -> General -> Framework, libraries and Embedded content and select Embed and Sign option.
 
 
-![Change settings](/Resource/changeStatus)
+![Change settings](/Resource/changeStatus.jpg)
 
 
 ## Configure your Project
