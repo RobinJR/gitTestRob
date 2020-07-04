@@ -1,1 +1,1 @@
-[iOS] (Resource/README.md)
+[iOS] (Resource)
