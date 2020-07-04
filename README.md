@@ -6,19 +6,11 @@
 SanBox framework is be used for finding nearby iBeacon hardware and performing sanitizing processes. Detailed workflow is described below.
 
 
-##Workflow Design
+## Workflow Design
 
+![Workflow design](/Resource/designConcept.jpg)
 
-
-
-
-
-
-
-
-
-
-Installation
+## Installation
 
 Download or clone the SanBox framework on your system. It contains a development and distribution framework file. Please note that as per apple guidelines the distribution bundle should contain only device supported files. 
 
@@ -27,46 +19,43 @@ Development framework contains architecture files for running both devices and s
 Drag and drop the SanBox.framework file into your Xcode project. Make sure that "Copy Items to Destination's Group Folder" is checked. 
 
 
-
-
-
-
-
-
-
+![Import Framework](/Resource/importFramework)
 
 
 Navigate to the project settings -> target -> General -> Framework, libraries and Embedded content and select Embed and Sign option.
 
 
+![Change settings](/Resource/changeStatus)
 
 
-
-
-
-
-Configure your Project
+## Configure your Project
 
 In Info.plist, add a new fields, NSLocationAlwaysUsageDescription, NSLocationAlwaysAndWhenInUsageDescription, NSBluetoothPeripheralUsageDescription with relevant values that you want to show to the user. This is mandatory for iOS 10 and above.
 
 
-
-Set up 
-
+## Set up 
 
 Import the framework header in your class
-    Import SanBox
+
+```swift
+import SanBox
+```
+
 Initialize SandBoaxManager
-    let beacon =  Beacon(uuid: UUID(uuidString: uuidString)!, major: major,, minor: minor, identifier: randomString(length: 5), beaconName:identifier)
+
+```swift
+let beacon =  Beacon(uuid: UUID(uuidString: uuidString)!, major: major,, minor: minor, identifier: randomString(length: 5), beaconName:identifier)
 let sanBoxManager = SanBoxManager(beacons:[beacon],proximity:SBProximity(rawValue:1))
 sandBoxManager.delegate = self
 sandBoxManager.isNotificationEnabled = true
 sandBoxManager.startmonitoring()
+```
+
 Beacon defines added devices, creating a sanBoxManager instance requires valid beacon reference.
 
-Sanitization Status & Protocols
+## Sanitization Status & Protocols
 
-SanitisationStatus
+```swift
 NotSanitized (the device is not sanitized)
 
 InProgress (started sanitization)
@@ -80,17 +69,12 @@ Sanitized (Device is sanitized)
 Failed (sanitization process failed)
 
 UnKnown (default initialization status, it will override after checking the last sanitization details)
+```
 
 
+## Protocol/Callback
 
-
-
-
-
-Protocol/Callback
-Description
-
-
+```swift
 didEnteredBeconRegion(beacon:Beacon?)
 Get called when the device enters beacon region
 - Parameters:
@@ -119,6 +103,6 @@ Used for informing the listening controller, when any kinds of authorization rel
  - LocationServicePermissionDenied ( location service permission is not granted)
 - BluetoothIsUnSupported (Bluetooth hardware failure)
 -BluetoothTurnedOff (Bluetooth power off)
-
+```
 
 
